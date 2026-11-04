@@ -29,8 +29,8 @@ just setup
 
 The following secrets must be configured in **Settings → Secrets and variables → Actions**:
 
-| Secret        | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
+| Secret        | Description                                                                      |
+|---------------|----------------------------------------------------------------------------------|
 | `PAT_TOKEN`   | Classic PAT with `repo` scope - used by release.yml to push CHANGELOG.md to main |
 
 ## Dependency updates

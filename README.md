@@ -112,6 +112,7 @@ To skip README auto-updating, set `readme_path: ''` in the workflow inputs.
 | `output_dir`    | -        | `assets`   | Base output folder - `stats/` and `metrics/` subfolders created automatically |
 | `readme_path`   | -        | `README.md`| File to auto-update with responsive `<picture>` elements (set `''` to skip)   |
 | `start_date`    | -        | -          | Programming start date `YYYY-MM-DD` - shows *years experience* stat           |
+| `animated`      | -        | `false`    | Set to `true` to enable count-up animation on all values when the SVG loads   |
 | `theme`         | -        | `dark`     | `dark` or `light`                                                             |
 | `primary_color` | -        | -          | Accent color (hex) - overrides theme                                          |
 | `bg_color`      | -        | -          | Background color (hex or `none` for transparent) - overrides theme            |
