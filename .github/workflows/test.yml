@@ -23,6 +23,7 @@ jobs:
           animation_duration: '2'
 
       - name: Commit if changed
+        if: github.ref_name != 'main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
