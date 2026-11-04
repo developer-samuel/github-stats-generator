@@ -38,7 +38,7 @@ Generates dark-themed SVG cards for your GitHub profile README - responsive acro
 
 Go to **GitHub → Settings → Developer Settings → Personal access tokens → Tokens (classic)** and create a token with:
 
-- `public_repo`
+- `repo` (includes private repositories - use `public_repo` if you only want public commits)
 - `read:user`
 
 ### 2. Add the token as a repository secret
@@ -123,7 +123,7 @@ Set `animated: 'true'` to enable a count-up effect on all values when the SVG lo
 
 | Input                | Required | Default    | Description                                                                   |
 |----------------------|----------|------------|-------------------------------------------------------------------------------|
-| `token`              | ✅       | -          | PAT with `public_repo` + `read:user`                                          |
+| `token`              | ✅       | -          | PAT with `repo` + `read:user` (use `public_repo` for public commits only)     |
 | `username`           | ✅       | -          | GitHub username - use `${{ github.repository_owner }}`                        |
 | `output_dir`         | -        | `assets`   | Base output folder - `stats/` and `metrics/` subfolders created automatically |
 | `readme_path`        | -        | `README.md`| File to auto-update with responsive `<picture>` elements (set `''` to skip)   |
