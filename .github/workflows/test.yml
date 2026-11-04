@@ -18,6 +18,7 @@ jobs:
           username: ${{ github.repository_owner }}
           start_date: '2017-09-01'
           theme: dark
+          animated: 'true'
 
       - name: Commit if changed
         run: |

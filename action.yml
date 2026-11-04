@@ -45,6 +45,10 @@ inputs:
     description: Path to the README file to auto-update with responsive <picture> elements (set to '' to skip)
     required: false
     default: 'README.md'
+  animated:
+    description: Enable count-up animation on SVG values ("true" or "false")
+    required: false
+    default: 'false'
 
 runs:
   using: composite
@@ -62,6 +66,7 @@ runs:
         INPUT_MUTED_COLOR: ${{ inputs.muted_color }}
         INPUT_DIVIDER_COLOR: ${{ inputs.divider_color }}
         INPUT_OUTPUT_DIR: ${{ inputs.output_dir }}
+        INPUT_ANIMATED: ${{ inputs.animated }}
       run: PYTHONPATH=${{ github.action_path }}/src python3 ${{ github.action_path }}/src/stats/generate.py
 
     - name: Generate metrics SVG
@@ -76,6 +81,7 @@ runs:
         INPUT_MUTED_COLOR: ${{ inputs.muted_color }}
         INPUT_DIVIDER_COLOR: ${{ inputs.divider_color }}
         INPUT_OUTPUT_DIR: ${{ inputs.output_dir }}
+        INPUT_ANIMATED: ${{ inputs.animated }}
       run: PYTHONPATH=${{ github.action_path }}/src python3 ${{ github.action_path }}/src/metrics/generate.py
 
     - name: Update README
