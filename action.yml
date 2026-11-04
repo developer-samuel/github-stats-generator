@@ -49,6 +49,14 @@ inputs:
     description: Enable count-up animation on SVG values ("true" or "false")
     required: false
     default: 'false'
+  animation_frames:
+    description: Number of frames for count-up animation (higher = smoother)
+    required: false
+    default: '50'
+  animation_duration:
+    description: Duration of count-up animation in seconds
+    required: false
+    default: '2'
 
 runs:
   using: composite
@@ -67,6 +75,8 @@ runs:
         INPUT_DIVIDER_COLOR: ${{ inputs.divider_color }}
         INPUT_OUTPUT_DIR: ${{ inputs.output_dir }}
         INPUT_ANIMATED: ${{ inputs.animated }}
+        INPUT_ANIMATION_FRAMES: ${{ inputs.animation_frames }}
+        INPUT_ANIMATION_DURATION: ${{ inputs.animation_duration }}
       run: PYTHONPATH=${{ github.action_path }}/src python3 ${{ github.action_path }}/src/stats/generate.py
 
     - name: Generate metrics SVG
@@ -82,6 +92,8 @@ runs:
         INPUT_DIVIDER_COLOR: ${{ inputs.divider_color }}
         INPUT_OUTPUT_DIR: ${{ inputs.output_dir }}
         INPUT_ANIMATED: ${{ inputs.animated }}
+        INPUT_ANIMATION_FRAMES: ${{ inputs.animation_frames }}
+        INPUT_ANIMATION_DURATION: ${{ inputs.animation_duration }}
       run: PYTHONPATH=${{ github.action_path }}/src python3 ${{ github.action_path }}/src/metrics/generate.py
 
     - name: Update README
