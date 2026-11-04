@@ -103,22 +103,40 @@ To skip README auto-updating, set `readme_path: ''` in the workflow inputs.
 
 ---
 
+## Animation
+
+Set `animated: 'true'` to enable a count-up effect on all values when the SVG loads:
+
+```yaml
+- uses: developer-samuel/github-stats-generator@v1
+  with:
+    token: ${{ secrets.STATS_TOKEN }}
+    username: ${{ github.repository_owner }}
+    animated: 'true'
+    # animation_frames: '50'   # higher = smoother (default: 50)
+    # animation_duration: '2'  # seconds (default: 2)
+```
+
+---
+
 ## Inputs
 
-| Input           | Required | Default    | Description                                                                   |
-|-----------------|----------|------------|-------------------------------------------------------------------------------|
-| `token`         | ✅       | -          | PAT with `public_repo` + `read:user`                                          |
-| `username`      | ✅       | -          | GitHub username - use `${{ github.repository_owner }}`                        |
-| `output_dir`    | -        | `assets`   | Base output folder - `stats/` and `metrics/` subfolders created automatically |
-| `readme_path`   | -        | `README.md`| File to auto-update with responsive `<picture>` elements (set `''` to skip)   |
-| `start_date`    | -        | -          | Programming start date `YYYY-MM-DD` - shows *years experience* stat           |
-| `animated`      | -        | `false`    | Set to `true` to enable count-up animation on all values when the SVG loads   |
-| `theme`         | -        | `dark`     | `dark` or `light`                                                             |
-| `primary_color` | -        | -          | Accent color (hex) - overrides theme                                          |
-| `bg_color`      | -        | -          | Background color (hex or `none` for transparent) - overrides theme            |
-| `text_color`    | -        | -          | Secondary text color (hex) - overrides theme                                  |
-| `muted_color`   | -        | -          | Label color (hex) - overrides theme                                           |
-| `divider_color` | -        | -          | Divider line color (hex) - overrides theme                                    |
+| Input                | Required | Default    | Description                                                                   |
+|----------------------|----------|------------|-------------------------------------------------------------------------------|
+| `token`              | ✅       | -          | PAT with `public_repo` + `read:user`                                          |
+| `username`           | ✅       | -          | GitHub username - use `${{ github.repository_owner }}`                        |
+| `output_dir`         | -        | `assets`   | Base output folder - `stats/` and `metrics/` subfolders created automatically |
+| `readme_path`        | -        | `README.md`| File to auto-update with responsive `<picture>` elements (set `''` to skip)   |
+| `start_date`         | -        | -          | Programming start date `YYYY-MM-DD` - shows *years experience* stat           |
+| `animated`           | -        | `false`    | Set to `true` to enable count-up animation on all values when the SVG loads   |
+| `animation_frames`   | -        | `50`       | Number of animation frames (higher = smoother)                                |
+| `animation_duration` | -        | `2`        | Animation duration in seconds                                                 |
+| `theme`              | -        | `dark`     | `dark` or `light`                                                             |
+| `primary_color`      | -        | -          | Accent color (hex) - overrides theme                                          |
+| `bg_color`           | -        | -          | Background color (hex or `none` for transparent) - overrides theme            |
+| `text_color`         | -        | -          | Secondary text color (hex) - overrides theme                                  |
+| `muted_color`        | -        | -          | Label color (hex) - overrides theme                                           |
+| `divider_color`      | -        | -          | Divider line color (hex) - overrides theme                                    |
 
 ---
 
