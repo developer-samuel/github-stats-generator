@@ -41,6 +41,8 @@ Go to **GitHub → Settings → Developer Settings → Personal access tokens �
 - `repo` (includes private repositories - use `public_repo` if you only want public commits)
 - `read:user`
 
+> **Note:** GitHub only counts commits where the commit email matches a verified email on your GitHub account. If your commit counts seem low, check that `git config user.email` matches your GitHub email.
+
 ### 2. Add the token as a repository secret
 
 In your profile repository go to **Settings → Secrets and variables → Actions** and add:
