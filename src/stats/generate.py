@@ -9,6 +9,8 @@ username = os.environ["INPUT_USERNAME"]
 start_date_in = os.environ.get("INPUT_START_DATE", "").strip()
 output_dir = os.environ.get("INPUT_OUTPUT_DIR", "assets").rstrip("/")
 animated = os.environ.get("INPUT_ANIMATED", "false").strip().lower() == "true"
+NUM_FRAMES = int(os.environ.get("INPUT_ANIMATION_FRAMES", "50"))
+DURATION = float(os.environ.get("INPUT_ANIMATION_DURATION", "2"))
 out_file = f"{output_dir}/stats/stats.svg"
 mobile_out_file = f"{output_dir}/stats/stats-640px.svg"
 c = resolve_colors()
@@ -39,9 +41,6 @@ count = len(blocks)
 width = 820
 col_w = width // count
 svg_h = 120
-
-NUM_FRAMES = 50
-DURATION = 2
 
 css_blocks = ""
 items_svg = ""

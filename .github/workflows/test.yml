@@ -19,6 +19,8 @@ jobs:
           start_date: '2017-09-01'
           theme: dark
           animated: 'true'
+          animation_frames: '50'
+          animation_duration: '2'
 
       - name: Commit if changed
         run: |

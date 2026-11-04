@@ -9,6 +9,8 @@ from themes import resolve_colors
 username = os.environ["INPUT_USERNAME"]
 output_dir = os.environ.get("INPUT_OUTPUT_DIR", "assets").rstrip("/")
 animated = os.environ.get("INPUT_ANIMATED", "false").strip().lower() == "true"
+NUM_FRAMES = int(os.environ.get("INPUT_ANIMATION_FRAMES", "50"))
+DURATION = float(os.environ.get("INPUT_ANIMATION_DURATION", "2"))
 out_file = f"{output_dir}/metrics/metrics.svg"
 mobile_out_file = f"{output_dir}/metrics/metrics-640px.svg"
 c = resolve_colors()
@@ -55,9 +57,6 @@ print(f"streak={current_streak}, best={best_streak}, highest={highest_day}, avg=
 
 font = "'Courier New', Courier, monospace"
 
-
-NUM_FRAMES = 50
-DURATION = 2
 
 blocks = [
     ("current streak", str(current_streak), "days"),
